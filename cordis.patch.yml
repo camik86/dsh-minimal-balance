@@ -1,0 +1,13 @@
+# One bundle, one row: the sidebar balance badge.
+# The host half serves /dsh-minimal-balance and resolves DEEPSEEK_API_KEY
+# through the DSH credentials service (env / .credentials.yaml fallbacks).
+- insert:
+    - id: dsh-minimal-balance
+      name: dsh-minimal-balance
+      config:
+        enabled: true
+        baseURL: https://api.deepseek.com
+        apiKeyEnv: DEEPSEEK_API_KEY
+        cacheSeconds: 30
+        timeoutMs: 10000
+        allowPublicClients: false

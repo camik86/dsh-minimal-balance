@@ -1,0 +1,55 @@
+{
+  "name": "dsh-minimal-balance",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "DeepSeek balance badge in the DSH Web sidebar footer: live balance, peak/off-peak pricing indicator, low-balance warning. The API key stays on the host.",
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "dsh-bundle",
+    "dsh",
+    "deepseek",
+    "deepseek-harness",
+    "balance",
+    "sidebar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/camik86/dsh-minimal-balance.git"
+  },
+  "homepage": "https://github.com/camik86/dsh-minimal-balance",
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json"
+  ],
+  "scripts": {
+    "pack": "npm pack"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}

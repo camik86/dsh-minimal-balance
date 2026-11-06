@@ -1,0 +1,39 @@
+{
+  "name": "dsh-minimal-balance-lan",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Optional LAN bridge for dsh-minimal-balance: forwards the balance route over loopback so LAN clients can read it when the upstream allows loopback only.",
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "dsh-bundle",
+    "deepseek",
+    "balance",
+    "lan"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/camik86/dsh-minimal-balance.git",
+    "directory": "lan"
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
