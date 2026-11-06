@@ -18,8 +18,11 @@
 ## 安装
 
 ```bash
-# 插件管理器（推荐）
+# 插件管理器（推荐，npm 发布后）
 plugin_manager install_bundle dsh-minimal-balance
+
+# 直接从 GitHub（无需 npm）
+plugin_manager install_bundle github:camik86/dsh-minimal-balance
 
 # 或 CLI
 dsh plugin --profile web add dsh-minimal-balance
